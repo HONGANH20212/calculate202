@@ -7,7 +7,11 @@
     android:layout_height="match_parent"
     tools:context="com.example.tipcalculator.MainActivity">
 
-    <!-- layout_width/ height: set layout of view (relative to the view's parent)    -->
+    <!--
+    - layout_width/ height: set layout of view (relative to the view's parent)
+        + match_parent: view = kích thước của view cha
+        + wrap_content: view = kích thước đủ cho phần nội dung bên trong
+    -->
     <TextView
         android:id="@+id/label_bill"
         android:layout_width="wrap_content"
