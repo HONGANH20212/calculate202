@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.jbleaning.tipcalculator.MainActivity">
+    tools:context="com.example.tipcalculator.MainActivity">
 
     <TextView
         android:id="@+id/label_bill"
@@ -22,14 +22,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/label_bill"
-        android:layout_toRightOf="@+id/label_bill"
-        android:alignParentRight="true"
+        android:layout_toEndOf="@+id/label_bill"
+        android:layout_alignParentEnd="true"
         android:gravity="center"
         android:hint="@string/amount_bill_hint"
         android:inputType="numberDecimal"
         android:padding="10dp"
         android:textColor="@color/darkBlue"
-        android:textSize="28sp" />
+        android:textSize="28sp"
+        android:autofillHints=""/>
 
     <TextView
         android:id="@+id/label_tip_percent"
@@ -38,31 +39,35 @@
         android:padding="10dp"
         android:layout_marginTop="20dp"
         android:layout_below="@+id/label_bill"
-        android:layout_alignLeft="@+id/label_bill"
-        android:layout_alighRight="@+id/label_bill"
+        android:layout_alignStart="@+id/label_bill"
+        android:layout_alignEnd="@+id/label_bill"
         android:textSize="28sp"
         android:text="@string/label_tip_percent" />
+
+    <!--rea line -->
+
     <EditText
         android:id="@+id/amount_tip_percent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:padding="10dp"
-        android:layout_toRightOf="@+id/label_tip_percent"
-        android:layout_alignBottom="@id/amount_tip_percent"
-        android:layout_alighRight="@+id/amount_bill"
-        android:textSize="28sp"
+        android:layout_alignEnd="@+id/amount_bill"
+        android:layout_alignBottom="@id/label_tip_percent"
+        android:layout_toEndOf="@+id/label_tip_percent"
         android:gravity="center"
         android:hint="@string/amount_tip_percent_hint"
-        android:inputType="number"/>
-    <!--rea line -->
+        android:inputType="number"
+        android:padding="10dp"
+        android:textSize="28sp"
+        android:textColor="@color/darkBlue"/>
+
     <View
         android:id="@+id/red_line"
         android:layout_below="@+id/label_tip_percent"
         android:layout_marginTop="20dp"
         android:layout_height="5dip"
         android:layout_width="match_parent"
-        android:layout_alignRight="@id/amount_bill"
-        android:layout_alignLeft="@id/label_bill"
+        android:layout_alignEnd="@id/amount_bill"
+        android:layout_alignStart="@id/label_bill"
         android:background="#FF00" />
     <TextView
         android:id="@+id/label_tip"
@@ -71,8 +76,8 @@
         android:layout_marginTop="20dp"
         android:padding="10dp"
         android:layout_below="@id/red_line"
-        android:layout_alignLeft="@+id/label_bill"
-        android:layout_alignRight="@id/label_bill"
+        android:layout_alignStart="@+id/label_bill"
+        android:layout_alignEnd="@id/label_bill"
         android:textSize="28sp"
         android:background="@color/lightGray"
         android:text="@string/label_tip"/>
@@ -81,21 +86,46 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:padding="10dp"
-        android:layout_toRightOf="@+id/label_tip"
+        android:layout_toEndOf="@+id/label_tip"
         android:layout_alignBottom="@id/label_tip"
-        android:layout_alighRight="@+id/amount_bill"
+        android:layout_alignEnd="@+id/amount_bill"
         android:background="@color/lightGreen"
         android:gravity="center"
         android:textSize="28sp"/>
     <TextView
-        android:id="@+id/amount_total"
+        android:id="@+id/label_total"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:padding="10dp"
-        android:layout_toRightOf="@+id/label_total"
-        android:layout_alignBottom="@id/label_tip"
-        android:layout_alighRight="@+id/amount_bill"
+        android:layout_below="@+id/label_tip"
+        android:layout_alignStart="@+id/label_tip"
+        android:layout_alignEnd="@+id/label_tip"
+        android:textSize="28sp"
+        android:background="@color/lightGray"
+        android:text="@string/label_total"/>
+    <TextView
+        android:id="@+id/amount_total"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_toEndOf="@+id/label_total"
+        android:layout_alignEnd="@+id/amount_bill"
+        android:layout_alignBottom="@id/label_total"
+        android:background="@color/lightGreen"
+        android:gravity="center"
+        android:textSize="28sp"/>
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/amount_total"
+        android:textSize="28sp"
+        android:text="@string/button_calculate"
+        android:background="@color/darkGreen"
+        android:onClick="calculate"/>
 
 
 </RelativeLayout>
