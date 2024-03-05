@@ -63,7 +63,8 @@
         android:inputType="number"
         android:padding="10dp"
         android:textSize="28sp"
-        android:textColor="@color/darkBlue"/>
+        android:textColor="@color/darkBlue"
+        android:autofillHints="" />
 
     <View
         android:id="@+id/red_line"
