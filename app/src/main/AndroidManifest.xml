@@ -13,9 +13,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.TipCalculator"
         tools:targetApi="31">
+        <!--screenOrientation = portrait => allow the app to work in vertical orientation-->
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
