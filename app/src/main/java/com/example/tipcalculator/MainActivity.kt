@@ -1,10 +1,12 @@
 package com.example.tipcalculator;
 
-
-import androidx.appcompat.app.AppCompatActivity;
+import android.support.v7.app.AppCompatActivity;
+//import android.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.text.TextWatcher;
+import android.text.Editable;
 import android.widget.EditText;
 import android.widget.TextView;
 import java.text.NumberFormat;
@@ -16,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText tipEditText;
 
     @Override
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         tipCalc = new TipCalculator (0.17f, 100.0f);
@@ -29,8 +32,8 @@ public class MainActivity extends AppCompatActivity {
         tipEditText.addTextChangedListener(tch);
 
     public void calculate() {
-        String billString = billEditText . getText ().toString();
-        String tipString = tipEditText . getText ().toString();
+        String billString = billEditText.getText().toString();
+        String tipString = tipEditText.getText().toString( );
 
         TextView tipTextView =
         (TextView) findViewById (R.id.amount_tip);
@@ -40,14 +43,14 @@ public class MainActivity extends AppCompatActivity {
         try {
             // convert billstring and tipstring to floats float billAmount=
             Float.parseFloat(billString);
-            int tipPercent = Integer . parseInt (tipString);
+            int tipPercent = Integer.parseInt(tipString);
 
             // update the Model
             tipCalc.setBill(billAmount);
             tipCalc.setTip(.01f * tipPercent);
             // ask Model to calculate tip and total amounts
             float tip tipCalc.tipAmount();
-            float total = tipCalc . totalAmount ();
+            float total = tipCalc.totalAmount ();
             // update the View with formatted tip and total amounts tipTextView.setText(money.format(tip));
             totalTextView.setText(money.format(total));
         } catch (NumberFormatException nfe) {
